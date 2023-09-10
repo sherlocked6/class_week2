@@ -29,7 +29,7 @@ function calculateMul(num){
 }
 
 function handleFirstRequest(req,res){
-    var counter = req.body.counter;
+    var counter = req.query.counter;
     var calculatedSum = calculateSum(counter);
     var calculatedMul = calculateMul(counter)
     
@@ -52,7 +52,7 @@ function givePage(req, res){
 
 app.get('/', givePage)
 
-app.get('/handleFirstRequest', handleFirstRequest)
+app.get('/handleSum', handleFirstRequest)
 //app.post('/', handleFirstRequest)
 app.post('/createuser', createUser)
 
